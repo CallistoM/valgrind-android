@@ -30,11 +30,16 @@ adb shell
 * Run valgrind normally inside ADB shell
 ```
 cd /tmp
-export VALGRIND=/tmp/inst/libexec/valgrind
+export VALGRIND_LIB=/tmp/inst/libexec/valgrind
 inst/bin/valgrind --leak-check=full --log=valgrind-out.txt ./executable_name
 ```
 
 * Pull valgrind output to check memory leaks or use cat
 ```
-adb pull /tmp/valgrind-out.txt
+adb pull /tmp/valgrind-out.txt 
+```
+* Cat version
+```
+adb shell
+cat /tmp/valgrind-out.txt
 ```
